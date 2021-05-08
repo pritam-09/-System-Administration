@@ -1,0 +1,57 @@
+Linux file system:-
+      Linux file system is generally a built-in layer of a Linux operating system used to handle the data management of the storage. It helps to arrange the file on the disk storage. It manages the file name, file size, creation date, and much more information about a file.
+Commands:
+   A command is an instruction given to our computer by us to do whatever we want. In Mac OS, and Linux it is called terminal, whereas, in windows it is called command prompt. Commands are always case sensitive.
+Commands are executed by typing in at the command line followed by pressing enter key.
+   Some basics commands are as follows:
+1. pwd- pwd stands for print making directory. It is 
+        used to find path of working directory. 
+2. head- It is used to give output of the first part 
+         of the file. 
+         Ex. head [OPTIONS] FILES. 
+3. tail- It is used to print the last part of the file.
+         Ex. tail[OPTIONS] FILES.
+4. cd-  Change the current working directory. 
+        Ex. Ex. /home/username/Documents.
+5. cp- It is used to copy the file from current
+       directory. 
+       Ex. cp file.txt
+6. ls- Used to view the content of directory.
+       Ex. ls/home/username/Documents.
+7. cat- Used to list the content of file.
+8. mv- Used to move or rename the file.
+       Ex. mv file.txt/home/username/Documents.
+9. mkdir- Used to make a new directory.
+          Ex. mkdir/Newfile
+10. touch- Create a new blank file.
+           Ex. Ex. touch newfile.txt
+11. rm- Used to delete directory.
+        Ex.rm file.txt 
+12. df- The 'df' stands for "disk filesystem."
+        Linux df command is used to display the 
+        disk space used in the file system.
+13. echo- echo command in linux is used to display 
+          line of text/string that are passed as an 
+          argument.
+14. uname- uname stands for user name.
+15. chmod- It is used to change the access mode of 
+           the file. 
+           
+Directory:
+  Everything in Linux/UNIX is based on the file system. The file system is comprised of various directories (Windows calls them "folders".) The root directory ("/") is at the base of the file system. Some directories may be on different partitions or drives, but they are still a part of the file system
+1./ is the root directory
+2./bin/ and /usr/bin/ store user commands.
+3./boot/ contains files used for system startup including the kernel.
+4./dev/ contains device files
+5./etc/ is where configuration files and directories are located.
+6./home/ is the default location for users‟ home directories.
+7./root/ is the home directory of the superuser "root"
+8./sbin/ and /usr/sbin/ store system commands.
+9./tmp/ is the system temporary directory. All users have read+write access to /tmp/.
+10./usr/ contains files related to users such as application files and related library files ("usr" is an acronym that stands for UNIX system resources).
+11./var/ (as in "variable") holds files and directories that are constantly changing such as printer spools and log files.
+Hard links:-
+   Hard Link acts like a mirror copy of the original file. These links share the same inodes. Changes made to the original or hard-linked file will reflect in the other. When you delete Hard Link nothing will happen to the other file. Hard links can't cross file systems.
+Soft links:-
+  Soft Link is an actual link to the original file also know as symbolic link or symlinks. These Links will have a different Inodes value. The soft link points to the original file so if the original file is deleted then the soft link fails. If you delete the Soft Link, nothing will happen to file. The reason for this is, the actual file or directory’s inode is different from the "soft link" created file's inodes. Soft links can cross file systems.
+  
