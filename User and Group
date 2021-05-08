@@ -1,0 +1,37 @@
+User:
+    A user is anyone who uses a computer.A user is the owner of the file. 
+By default, the person who created a file becomes its owner.Hence, a user is also sometimes called an owner.
+Each user identified with unique identification number.The information of users in a system are stored in /etc/passwd file. 
+The hashed passwords for users are stored in /etc/shadow file.
+   chage [options] LOGIN
+sudo user:
+          The sudo command allows you to run programs with the security privileges of another user (by default, as the superuser).
+Group:
+  Group can contain multiple users.All users belonging to a group will have the same Linux group permissions access to the file.
+Suppose you have a project where a number of people require access to a file. Instead of manually assigning permissions to each 
+user, you could add all users to a group, and assign group permission to file such that only this group members and no one else can 
+read or modify the files.
+
+Commands used are:
+1.useradd : for creating new user.
+             (ex. useradd star)
+2.want to add a user in the group then -
+    useradd -g groupname username
+       (ex. useradd -g sky moon)
+3.when you already created user and now you want to add it in perticular group then - 
+     usermod -g groupname username
+       (ex. usermod -g star sky)
+4.userdel : for deleting the user.
+5.groupadd : for adding group in system.
+            (ex. groupadd sky)
+6.groupdel : for delete that group
+7. cat/etc/passwd : To check addition of    
+                    the user.
+8. passwd  : To assign the password to user  
+9. cat/etc/group : for checking addition   
+    of group
+10. id : To get data about user and its    
+        group.                   
+11. change : change user password expiry information.
+12. sudo: run one or more commands as another user typically with superuser permissions
+13. su : to switch user.
