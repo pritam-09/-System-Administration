@@ -1,0 +1,44 @@
+Accessing Files:-
+
+Basic permissions:
+1. Owner permissions: A user is the owner of the file. The owner's permissions determine what actions the
+   owner of the file can perform on the file.
+2. Group permissions: The group's permission determine what actions a user, who is a member of
+   the group that a file belongs to, can perform on the file.
+3. Other permissions: The permissions for others indicate what action all other users can perform 
+   on the file.
+
+Permissions:
+
+Directory in your Linux system :
+     Directory access modes are listed and organized in the same manner as any other file. There are a few differences that need to be mentioned −
+
+1.Read:- This permission gives you the authority to open and read a file. Read permission on a directory gives you the ability to lists it’s content.
+2.Write: - The write permission gives you the authority to modify the contents of a file. The write permission on a directory gives you the authority to add,
+remove and rename files stored in the directory. You will beable to modify the file contents. But you will not beable to rename, move or remove the file from the 
+directory.
+3.Execute: - In Linux, you cannot run a program unless the execute permission is set. If the execute permission is not set, you might still be able to
+see/modify the program code (provided read & write permissions are set), but not run it.Each permission has a numeric value associated with it.
+ Read permission = r (4)
+ Write permission = w (2)
+ Execute permission = x (1)
+ No permission = -
+ Execute + write permission: 1 + 2 = 3:  -wx
+ Read + execute permission: 4 + 1 = 5:   r-x
+ Read + write permission: 4 + 2 = 6:   rw-
+ Read + write + execute permissions: 4 (read) + 
+ 2 (write) + 1 (execute) = 7:  rwx
+
+Two commands are available to change the owner and the group of files −
+1.chown command: chown − The chown command stands for
+"change owner" and is used to change the owner of a 
+file.
+chown command to change owner and group assignments, 
+the sytax is: chown owner: group filename
+So to change the owner of the file to user and group
+to family you enter
+chown user: family file.
+2.chmod command:
+chmod command allows you to change the permissions on
+a file using either a symbolic or a numeric mode.
+Syntax: $chmode g=r filename
