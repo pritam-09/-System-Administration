@@ -1,0 +1,77 @@
+Linux Partitions :
+		Large storage devices are divided into separate sections called partitions. Partitioning also allows you to divide your hard drive into isolated sections, 
+		where each section behaves as its own hard drive. Partitioning is particularly useful if you run multiple operating systems.
+		BIOS and UFI are tow types of chips for the motherboard.
+		MBR (Master Boot Record) method is used for BIOS and GPT (GUID Partition Table) method is used for UFI. 
+
+Two types of partitions :
+		1) Primary Partition : this partition contains the booting files.
+		2) Extended Partition : this partition contains the storage files for other data to store.
+
+
+A partition table tells the operating system how the partitions and data on the drive are organized.
+There are two main types of partition tables: MBR and GPT.
+
+MBR :
+	MBR is a special boot sector located at the beginning of a drive. This sector contains a boot loader for the installed operating system and 
+	information about the drive’s logical partitions. The boot loader is a small bit of code that generally loads the larger boot loader from another partition on a drive.
+	MBR does have its limitations. For starters, MBR only works with disks up to 2 TB in size. MBR also only supports up to four primary partitions—
+	if you want more, you have to make one of your primary partitions an “extended partition” and create logical partitions inside it. MBR have maximum 26 partitions.
+	MBR had no way of knowing if its data was corrupted—you’d only see there was a problem when the boot process failed or your drive’s partitions vanished.
+
+GPT :
+	GPT is called as GUID Partition Table because every partition on your drive has a “globally unique identifier,” or GUID—
+	a random string so long that every GPT partition on earth likely has its own unique identifier.
+	GPT doesn’t suffer from MBR’s limits. GPT-based drives can be much larger, with size limits dependent on the operating system and
+	its file systems. GPT also allows for a nearly unlimited number of partitions. Maximun size for this is nearly 10TB and it have maximun 126 partitions.
+	On an MBR disk, the partitioning and boot data is stored in one place. If this data is overwritten or corrupted, you’re in trouble. 
+	In contrast, GPT stores multiple copies of this data across the disk, so it’s much more robust and can recover if the data is corrupted.
+	GPT also stores cyclic redundancy check (CRC) values to check that its data is intact. If the data is corrupted, GPT can notice the problem and 
+	attempt to recover the damaged data from another location on the disk. After extended partition, at the end GPT have backup of data to get the data.
+	
+
+
+STEPS TO CREATE PARTITIONS :
+
+1. List partitions.
+	To list the partitions use 'parted -l' command.
+
+2. Label a partition.
+	To label the partition use
+	'parted/dev/vdb mklabel msdos'
+	(mklabel for make the label and msdos for MBR partition)
+
+3. Use mkpart to make a partition :
+	For interactive process use 'parted/dev/vdb'
+	use 'mkpart' command to create the partition.
+	In this you will choose your partition type i.e. primary / extended then 
+	file system type [ext2] then
+	start i.e. 2048s then 
+	end i.e. how much persentage you want then
+	'quit'.
+
+4. Let the partition be created/settled
+	Now waiting for creation of partition use this command
+	'udevadm/settle'
+	
+5. Attach the file system to the partition.
+	To attach the file system to the partition use this command
+	'mkfs.xfs/dev/vdb1'
+	
+6.Create a mount point directory.
+	mkdir/archieve
+	
+7.Add entry in fstab.
+	we created temporary directory and if mount is created, after rebooting it removes therefore we have to add the entry in fstab.
+	Lsblk --fs/dev/vdb = To get the UUID
+	vi/etc/fstab = To make entry in fstab
+	Now enter the UUID and other deatails.
+	
+8. Systemvtl daemon-reload
+	To restart or work like rebooting use this command
+	'systemvtl daemon-reload'
+	
+9. Mount the partition on the directory
+	now we have to mount the partition on directory.
+	mount/archive/
+	
