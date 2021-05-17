@@ -1,0 +1,22 @@
+LVM :-
+Logical Volume Manager (LVM) is used on Linux to manage hard drives and other storage devices. It can sort raw storage into logical volumes, making it easy to configure and use. It is a method used by Linux to manage storage volumes across different physical hard disks.
+Commands-
+1)vgdisplay-To display basic information regarding a Volume Group on a Linux system 
+2)lvdisplay-To display Logical Volume (LV) information on a Linux system
+3)pvcreate-To add a new disk into a system that is to be managed by LVM
+4)pvremove-To remove a Physical Volume from a system
+5)vgcreate-To create a new Volume Group (VG)
+6)vgename-To rename an existing Volume Group
+7)vgremove- To remove a Volume Group
+8)lvcreate-To create a Logical Volume on an existing Volume Group
+Three concepts of LVM :-
+1.	Physical Volume (PV): it is a whole disk or a partition of a disk
+2.	Volume Group (VG): corresponds to one or more PV
+3.	Logical Volume (LV): represents a portion of a VG. A LV can only belong to one VG. It’s on a LV that we can create a file system.
+
+To create a LVM, following steps are required :-
+1.	Select the physical storage devices for LVM
+2.	Create the Volume Group from Physical Volumes
+3.	Create Logical Volumes from Volume Group
+
+© 2021 GitHub, Inc.
